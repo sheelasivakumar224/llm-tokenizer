@@ -36,16 +36,16 @@ textarea.addEventListener("input", async () => {
 
     tokenContainer.innerHTML = "";
 
-    data.tokens.forEach(token => {
+    data.tokens.forEach((token, index) => {
 
         const div =
             document.createElement("div");
 
         div.className = "token";
 
-        const tokenKey = token.token_id;
+        const tokenKey = index;
 
-            if (!tokenColors[tokenKey]) {
+        if (!tokenColors[tokenKey]) {
             tokenColors[tokenKey] = generateTransparentColor();
         }
 
